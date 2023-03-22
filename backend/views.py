@@ -12,7 +12,7 @@ def urlInput(request):
         url = request.GET['url']
         crawledData = Crawler(url, 25)
         crawled_urls = clean_output(crawledData.crawled_urls)
-        response = ":::::::::::::::::::::::" + "URL COUNT: " + str(len(crawledData.crawled_urls)) + "::::::::::::::::::::::::\n" + crawled_urls
+        response = ":::::::::::::::::::::::" + "URL COUNT: " + str(len(crawled_urls)) + "::::::::::::::::::::::::\n" + crawled_urls
         data = {
                     "success": True,
                     "data": response
@@ -30,4 +30,4 @@ def clean_output(crawled_urls):
     output = ''
     for i in range(len(crawled_urls)):
         output = output + str(crawled_urls[i]) + "\n"
-    return 
+    return output

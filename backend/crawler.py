@@ -40,7 +40,6 @@ class Crawler():
                         found_urls.append(link)
                 else:
                     pass
-
         except HTTPError as e:
             print('HTTPError:' + str(e.code) + ' in ', url)
         except URLError as e:
